@@ -1,0 +1,37 @@
+##################################################################
+#								##
+#			Tux Locale				##
+#								##
+#	The program post in twitter the current locale,		##
+#	of your computer.					##
+#								##
+#	Create by: Lucas P. Brigida - lucasbrigida@gmail.com	##
+#								##
+##################################################################
+
+	* Pre-requisities:
+
+		Spynner and BeautifulSoup library.
+
+	* How install this software(Ubuntu):
+
+		1. For install spynner library:
+		
+		$ wget -c http://pypi.python.org/packages/source/s/spynner/spynner-1.10.tar.gz#md5=9fd6088fc92f7948cb694b8736399173
+		$ tar -vzxf spynner-1.10.tar.gz
+		$ cd spynner-1.10/
+		$ python setup.py install
+
+		2. For install BeautifulSoup library:
+
+		$ apt-get install -y python-beautifulsoup
+
+
+		3. Install tux locale:
+
+		In Tux Locale directory:
+		$ ./install
+
+		4. Change variables in /etc/init.d/tuxlocale.sh:
+		USERNAME='user' to USERNAME='twitter_user'
+		PASSWORD='pass' to PASSWORD='twitter_pass'
