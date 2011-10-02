@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo mkdir /opt/tuxlocale
+sudo cp -R $PWD/* /opt/tuxlocale/
+sudo cp tuxlocale.sh /etc/init.d/
+sudo chmod +x /etc/init.d/tuxlocale.sh
+sudo chmod +x /opt/tuxlocale/tuxlocale
+sudo ln -s /opt/tuxlocale/tuxlocale /usr/local/sbin/tuxlocale
+echo 'Success Install ...'
+echo 'Please change the variables USERNAME,PASSWORD in /etc/init.d/tuxlocale.sh'
+echo 'Run Tux Locale with /etc/init.d/tuxlocale.sh'

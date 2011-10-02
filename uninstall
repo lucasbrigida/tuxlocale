@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo rm -rf /opt/tuxlocale/
+sudo rm /etc/init.d/tuxlocale.sh
+sudo rm /usr/local/sbin/tuxlocale

@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from iplookup import iplookup
+#from ipextern import ipextern
+from twitter import twitter
+from time import strftime,sleep
+import sys
+
+def main(username,password):
+
+    # Code block is need to alternative get iplookup code
+    #ipex=ipextern()
+    #ip=ipex.getip()
+
+    location=iplookup()
+    geoip_info=location.get_locale()
+
+    account=twitter()
+    account.login(username,password)
+    date=strftime("%d/%m/%Y %H:%M:%S")
+    msg=geoip_info['lat']+\
+        geoip_info['lng']+\
+        ' - '+geoip_info['city']+\
+        ', ' + geoip_info['state']+\
+        ', ' + geoip_info['country']+' - '\
+        'IP: ' + geoip_info['ip'] + ' - ' + 'Date: ' + date
+    account.update_locale(msg)
+
+    print 'Posted the current place: lat: %s  lng: %s - %s' %(geoip_info['lat'],
+        geoip_info['lng'],date)
+
+    return 0
+
+if __name__ == '__main__':
+
+    MENU= '''           Tux Locale - Post current machine locale in twitter
+
+Usage tuxlocale --[options]
+
+        --post twitter_username twitter_password update_time(in seconds)
+        --help Show this message
+
+    '''
+
+    if len(sys.argv) == 5:
+        while True:
+            username=sys.argv[2]
+            password=sys.argv[3]
+            main(username,password)
+            sleep(int(sys.argv[4]))
+    else:
+        print MENU
+        sys.exit(0)
