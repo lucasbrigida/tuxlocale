@@ -48,7 +48,13 @@ Usage tuxlocale --[options]
             username=sys.argv[2]
             password=sys.argv[3]
             main(username,password)
-            sleep(int(sys.argv[4]))
+            try:
+                if int(sys.argv[4]) > 0:
+                   sleep(int(sys.argv[4]))
+                else:
+                    sys.exit(0)
+            except:
+                sys.exit(0)
     else:
         print MENU
         sys.exit(0)

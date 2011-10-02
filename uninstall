@@ -3,3 +3,4 @@
 sudo rm -rf /opt/tuxlocale/
 sudo rm /etc/init.d/tuxlocale.sh
 sudo rm /usr/local/sbin/tuxlocale
+echo 'Execute command: crontab -e and remove the last line */5 * * * * /etc/init.d/tuxlocale.sh'
