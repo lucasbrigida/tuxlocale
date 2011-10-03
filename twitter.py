@@ -1,4 +1,5 @@
 from browser import browser
+from time import sleep
 
 class twitter(browser):
 
@@ -15,6 +16,7 @@ class twitter(browser):
                 if sts_opt == True: break
             except:
                 print 'Try sign in  twitter again'
+		sleep(10)
                 continue
     def update_locale(self,msg=''):
 
@@ -27,5 +29,6 @@ class twitter(browser):
                 if sts_opt == True: break
             except:
                 print 'Try post in twitter again'
+		sleep(5)
                 continue
         #browser.browse()
