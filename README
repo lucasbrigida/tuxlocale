@@ -35,3 +35,4 @@
 		4. Change variables in /etc/init.d/tuxlocale.sh:
 		USERNAME='user' to USERNAME='twitter_user'
 		PASSWORD='pass' to PASSWORD='twitter_pass'
+		UPDATE_INTERVAL = time_in_seconds (No need change!)
