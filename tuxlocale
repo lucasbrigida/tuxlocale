@@ -23,7 +23,7 @@ def main(username,password):
         geoip_info['lng']+\
         ' - '+geoip_info['city']+\
         ', ' + geoip_info['state']+\
-        ', ' + geoip_info['country']+' - '\
+        ', ' + geoip_info['country']+' - '+\
         'IP: ' + geoip_info['ip'] + ' - ' + 'Date: ' + date
     account.update_locale(msg)
 
