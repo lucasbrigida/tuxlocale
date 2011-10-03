@@ -49,7 +49,7 @@ Usage tuxlocale --[options]
             password=sys.argv[3]
             main(username,password)
             try:
-                if int(sys.argv[4]) > 0:
+                if sys.argv[4] > 0:
                    sleep(int(sys.argv[4]))
                 else:
                     sys.exit(0)
